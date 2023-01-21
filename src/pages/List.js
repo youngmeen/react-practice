@@ -1,4 +1,5 @@
 import React from "react";
+import Table from 'react-bootstrap/Table';
 
 const User = ({userDate}) => {
     return (
@@ -18,7 +19,7 @@ const UserList = () => {
     ];
 
     return (
-        <table>
+        <Table striped bordered hover>
             <thead>
             <tr>
                 <th>이메일</th>
@@ -26,9 +27,9 @@ const UserList = () => {
             </tr>
             </thead>
             <tbody>
-            {users.map(user => <User userDate={user} />)}
+            {users.map(user => <User key = {user.name} userDate={user} />)}
             </tbody>
-        </table>
+        </Table>
     )
 }
 
